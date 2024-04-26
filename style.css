@@ -4,14 +4,28 @@ html {
   font-family: "Titillium Web", sans-serif;
 }
 
+.low-priority {
+  color: green;
+}
+
+.medium-priority {
+  color: rgb(207, 222, 40);
+}
+
+.high-priority {
+  color: red;
+}
+
+
 body {
-  min-height: 100%;
-  min-width: 100%;
-  background: linear-gradient(pink, violet);
+  min-height: 90%;
+  min-width: 90%;
+  background: linear-gradient(rgba(192, 255, 245, 0.68), rgb(132, 96, 186));
 }
 
 button {
-  font-size: 7px;
+    font-size: 20px;
+    padding: 10px 20px; 
 }
 
 #main-content {
@@ -20,18 +34,30 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 15px 20px 18px 18px;
-  border-radius: 5px;
-  box-shadow: 2px 5px 5px #333;
+  border: 2mm ridge rgba(50, 212, 220, 0.525);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1px;
+  box-shadow: 1px 3px 3px #333;
 }
 
 #list {
   margin: 10px;
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 15px 20px 18px 18px;
-  border-radius: 5px;
-  box-shadow: 2px 5px 5px #333;
+  background: linear-gradient(rgba(192, 255, 245, 0.612), rgb(132, 96, 186)), #ffffffe8;
+  border-radius: 1px;
+  box-shadow: 1px 3px 3px #333;
+  font-size: 20px;
+}
+
+#new-task-description {
+  font-family: "Arial", sans-serif; /* Change the font family */
+  font-size: 20px; /* Change the font size */
+}
+
+#priority-select {
+  font-family: "Arial", sans-serif; /* Change the font family */
+  font-size: 20px; /* Change the font size */
+}
+
+input[type="submit"] {
+  font-size: 20px; /* Increase the font size */
 }
