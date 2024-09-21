@@ -51,18 +51,26 @@ document.addEventListener("DOMContentLoaded", () => {
       this.renderTasks();
     }
   }
-
-  // Create an instance of TaskList
   const taskList = new TaskList();
-  const newTaskForm = document.getElementById("create-task-form");
+  // Load tasks from localStorage when the page loads
+  window.onload = function() {
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    storedTasks.forEach(task => {
+      taskList.addTask(task.description, task.priority);
+    });
+  };
 
   // Event listener for form submission to create a new task
+  const newTaskForm = document.getElementById("create-task-form");
+
   newTaskForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const newTaskDescription = document.getElementById("new-task-description").value.trim();
     const newTaskPriority = document.getElementById("priority-select").value;
+    
     if (newTaskDescription) {
       taskList.addTask(newTaskDescription, newTaskPriority);
+      saveTaskToLocalStorage(newTaskDescription, newTaskPriority);
       e.target.reset();
     } else {
       alert("Please enter a task description.");
@@ -75,6 +83,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target.classList.contains("delete-btn")) {
       const taskDescription = e.target.previousElementSibling.textContent;
       taskList.deleteTask(taskDescription);
+      removeTaskFromLocalStorage(taskDescription);
     }
   });
+
+  // Function to save a task to localStorage
+  function saveTaskToLocalStorage(description, priority) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push({ description, priority });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  // Function to remove a task from localStorage
+  function removeTaskFromLocalStorage(description) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks = tasks.filter(task => task.description !== description);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
 });
