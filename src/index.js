@@ -1,5 +1,7 @@
 ////TO DO LIST: use of DOM and localstorage
 ///
+//add in catch for same name deletion
+//
 //working code, needs some cleanup/better comments/ increased functionality/adaptability
 document.addEventListener("DOMContentLoaded", () => {
   // Task class
@@ -102,9 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const taskUl = document.getElementById("tasks");
   taskUl.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
+      
       const taskLi = e.target.closest("li"); 
       const taskDescription = taskLi.querySelector("span").textContent;
       taskList.deleteTask(taskDescription); 
+      
       removeTaskFromLocalStorage(taskDescription); 
     }
   });

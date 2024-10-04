@@ -4,23 +4,19 @@ html {
   font-family: "Titillium Web", sans-serif;
 }
 
-.low-priority {
-  color: green;
+h1 {
+  font-size: 48px;
+  color: #333;
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
 }
-
-.medium-priority {
-  color: rgb(207, 222, 40);
-}
-
-.high-priority {
-  color: red;
-}
-
 
 body {
+  position: relative;
   min-height: 90%;
   min-width: 90%;
-  background: linear-gradient(rgba(192, 255, 245, 0.68), rgb(132, 96, 186));
+  background: linear-gradient(rgba(20, 209, 178, 0.68), rgb(90, 16, 202));
 }
 
 button {
@@ -35,29 +31,45 @@ button {
   align-items: center;
   flex-direction: column;
   border: 2mm ridge rgba(50, 212, 220, 0.525);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(51, 180, 186, 0.2);
   border-radius: 1px;
   box-shadow: 1px 3px 3px #333;
 }
 
 #list {
+  position: relative;
   margin: 10px;
-  background: linear-gradient(rgba(192, 255, 245, 0.612), rgb(132, 96, 186)), #ffffffe8;
   border-radius: 1px;
   box-shadow: 1px 3px 3px #333;
-  font-size: 20px;
+  font-size: 40px;
+}
+
+.low-priority {
+  color: green;
+}
+
+.medium-priority {
+  color: rgb(207, 222, 40);
+}
+
+.high-priority {
+  color: red;
 }
 
 #new-task-description {
   font-family: "Arial", sans-serif; /* Change the font family */
-  font-size: 20px; /* Change the font size */
+  font-size: 40px; /* Change the font size */
+}
+
+.large-label {
+  font-size: 40px; /* Adjust as needed */
 }
 
 #priority-select {
   font-family: "Arial", sans-serif; /* Change the font family */
-  font-size: 20px; /* Change the font size */
+  font-size: 40px; /* Change the font size */
 }
 
 input[type="submit"] {
-  font-size: 20px; /* Increase the font size */
+  font-size: 40px; /* Increase the font size */
 }
